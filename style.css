@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+  }
+  body {
+    margin: 0;
+  }
+  nav{
+    color: #fff;
+    z-index: 3;
+    width: 100%;
+    position: fixed;
+ }
+ nav:hover{
+    background: #293339;
+    color: #fff;
+ }
+ nav ul{
+    list-style: none;
+    text-align: center;
+    overflow: hidden;
+    margin: auto;
+    padding: 0px;
+    
+}
+nav ul li a{
+    display: block;
+    padding:20px ;
+    text-decoration: none;
+    color: #fff;
+    
+}
+nav ul li a:hover , nav .menu-btn:hover{
+    /* background: #006A61; */
+    background: #1C2326;
+}
+
+nav .menu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    -webkit-transition: max-height .2s ease-out;
+    -moz-transition: max-height .2s ease-out;
+    -ms-transition: max-height .2s ease-out;
+    -o-transition: max-height .2s ease-out;
+    
+}
+nav .menu-icon{
+    cursor: pointer;
+    display: block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    float: right;
+}
+nav .menu-icon .navicon{
+    background: #fff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    -webkit-transition: background .2s ease-out;
+    -moz-transition: background .2s ease-out;
+    -ms-transition: background .2s ease-out;
+    -o-transition: background .2s ease-out;
+    width: 18px;
+}
+nav .menu-icon .navicon::before , nav .menu-icon .navicon::after{
+    background: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition:all .2s ease-out;
+    width: 100%;
+    -webkit-transition:all .2s ease-out;
+    -moz-transition:all .2s ease-out;
+    -ms-transition:all .2s ease-out;
+    -o-transition:all .2s ease-out;
+}
+nav .menu-icon .navicon::before{
+    top: 5px;
+}
+nav .menu-icon .navicon::after{
+    top: -5px;
+}
+nav .menu-btn{
+    display: none;
+}
+  nav .menu-btn:checked ~ .menu{
+      max-height: 240px;
+  }
+  nav .menu-btn:checked ~ .menu-icon .navicon{
+    background: transparent;
+}
+nav .menu-btn:checked ~ .menu-icon .navicon::before{
+    transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    -webkit-transform: rotate();
+}
+nav .menu-btn:checked ~ .menu-icon .navicon::after{
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    -webkit-transform: rotate();
+}
+nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before , nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after{
+    top: 0px;
+}
+ /* media query for hamburger nav */
+ @media only screen and (min-width:768px){
+    nav li{
+        float: left;
+        margin: auto;  
+    }
+    nav li a{
+        padding: 20px 25px;
+    }
+    nav .menu{
+        clear: none;  
+        max-height: none;
+
+    }
+    nav .menu-icon{
+        display: none;
+    }
+   
+}
+/* The hero image */
+.flex-container{
+    width: 100%;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    /* min-height: calc(100vh - 40vh); */
+    text-align: center;
+    color: #eee;
+    align-content: center;
+}
+.padding-top{
+    padding:50px 0px;
+}
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://www.budgetplaces.com/assets/img/homepage-images/main-image.jpg"); 
+    /* Set a specific height */
+    height: 600px;
+  }
+  .middlehero{
+      justify-content: center;
+      align-items: center;
+      /* flex: 1 1 100vw; */
+      
+  }
+  .middlehero h1, .middlehero p , .middlehero button{
+    padding: 10px;
+    margin: 10px;
+  }
+  .middlehero h1{
+    font-size: 2.5em;
+  }
+  .middlehero button{
+      border-radius: 20px  ;
+      -webkit-border-radius:;
+      -moz-border-radius:;
+      -ms-border-radius:;
+      -o-border-radius:;
+      background: yellowgreen;
+      border: none;
+      color: #fff;
+}
+  .hero-image > article,.flex-container article {
+    flex: 1;
+  }
+   .side1, 
+ aside {
+    flex: 0 0 20vw;
+  }
+  .side1 {
+    order: -1;
+  }
+
+.orange-area{
+    background: yellowgreen;
+}
+.middlehero .Findbtn2{
+    color: black;
+    background: #eee;
+}
+.flexrow{
+    flex-direction: row;
+    flex-wrap: wrap;   
+}
+.grey-area{
+    background-color: #f1f1f1;
+}
+.item1{
+    
+    margin: 20px 10px;
+    padding: 20px;
+    width: 200px;
+    height: auto; 
+    /* box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25); */
+    border-radius:5px;
+    
+    color: #000;
+    flex: 1 1 200px;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.item1 i{
+    font-size: 4em;
+    color: yellowgreen;
+    margin-bottom: 10px;
+}
+.itemImg, img{
+    width: 100%;
+}
+.photo{
+    margin: 0px;
+    padding: 0px;
+    width: 33%;
+    height: auto;
+    /* box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25); */
+    
+    color: #000;
+    flex: 1 1 400px;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.middlehero .Findbtn3{
+    color: black;
+    background: #eee;
+    border-radius: 20px  ;
+      -webkit-border-radius:;
+      -moz-border-radius:;
+      -ms-border-radius:;
+      -o-border-radius:;
+      border: none;
+}
+.darkgrey-area{
+    background: #1C2326;
+}
+.blackfont{color: #1C2326;}
+  #main {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+  }
+  h2{
+      padding: 20px 0px;
+  }
+ 
+  footer {
+    background: yellowgreen;
+    
+  }
